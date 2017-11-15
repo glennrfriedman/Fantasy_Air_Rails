@@ -42,6 +42,11 @@ class PlayersController < ApplicationController
 		render json: Player.where(week: week)
 	end
 
+	def find_by_team
+		team = params[:team]
+		render json: Player.where(team: team)
+	end
+
 	def find_by_position
 		position = params[:position]
 		render json: Player.where(position: position)

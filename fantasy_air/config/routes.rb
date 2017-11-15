@@ -10,6 +10,8 @@ Rails.application.routes.draw do
   get '/players/:full_name/:team' => 'players#show_one_all_weeks', :as => :one_player_weekly_data
   # route to show one weeks entire dataset
   get '/weeks/:week' => 'players#find_by_week', :as => :all_players_data_one_week
+  # route to show one teams entire dataset
+  get '/team/:team' => 'players#find_by_team', :as => :all_teams_data_all_weeks
   # route to show one positions entire dataset
   get '/position/:position' => 'players#find_by_position', :as => :one_position_data_all_weeks
   # route to show one positions dataset for one week
