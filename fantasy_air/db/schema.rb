@@ -28,11 +28,11 @@ ActiveRecord::Schema.define(version: 20171114190927) do
     t.integer "air_yards"
     t.integer "tm_att"
     t.integer "tm_airyards"
-    t.integer "aypt"
-    t.integer "racr"
-    t.integer "ms_air_yards"
-    t.integer "target_share"
-    t.integer "wopr"
+    t.float "aypt"
+    t.float "racr"
+    t.float "ms_air_yards"
+    t.float "target_share"
+    t.float "wopr"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
