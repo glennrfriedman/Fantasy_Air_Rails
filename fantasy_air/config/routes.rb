@@ -5,7 +5,7 @@ Rails.application.routes.draw do
   # route to show entire database dataset
   get '/players' => 'players#show_all_season', :as => :all_players_data_weekly
   # route to display all results for player name from entire dataset
-  get '/players/:full_name/' => 'players#show_results_all_weeks', :as => :one_player_weekly_data_results
+  get '/players/:full_name/' => 'players#player_search_results', :as => :one_player_weekly_data_results
   # route to show one players entire dataset + shows season data
   get '/players/:full_name/:team' => 'players#show_one_all_weeks', :as => :one_player_weekly_data
   # route to show one weeks entire dataset
