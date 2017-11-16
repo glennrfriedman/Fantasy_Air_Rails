@@ -7,11 +7,18 @@ class PlayersController < ApplicationController
 
 	def player_search_results
 		search_results = []
-		player_data = Player.where('LOWER(full_name) LIKE ?', "%#{params[:full_name].downcase}%").order(:full_name).pluck(:full_name, :team, :position).uniq		
+		player_data = Player.where('LOWER(full_name) LIKE ?', "%#{params[:full_name].downcase}%").pluck(:full_name, :team, :position).uniq.take(5)
 		render json: {
 				search_results: player_data
 		}
 	end
+
+	def player_list
+		player_data = Player.all.pluck(:full_name, :team, :position).uniq
+		render json: {
+				player_list: player_data
+		}
+	end 
 	
 	def show_one_all_weeks
 		full_name = params[:full_name]
