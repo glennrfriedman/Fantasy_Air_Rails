@@ -18,5 +18,7 @@ Rails.application.routes.draw do
   get '/position/:position' => 'players#find_by_position', :as => :one_position_data_all_weeks
   # route to show one positions dataset for one week
   get '/position/:position/:week' => 'players#find_by_position_one_week', :as => :one_position_data_one_week
-
+  # route to show one positions dataset for one week
+  get '/showWeek' => 'players#show_week', :as => :show_week
+  
 end

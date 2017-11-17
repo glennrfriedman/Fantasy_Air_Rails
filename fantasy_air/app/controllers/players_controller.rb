@@ -13,6 +13,13 @@ class PlayersController < ApplicationController
 		}
 	end
 
+	def show_week 
+		weeks = Player.order(week: :desc).pluck(:week).uniq
+		render json: {
+			weeks: weeks
+		}
+	end
+
 	def player_list
 		player_data = Player.all.pluck(:full_name, :team, :position).uniq
 		render json: {
