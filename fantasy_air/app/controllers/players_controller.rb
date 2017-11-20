@@ -1,7 +1,7 @@
 class PlayersController < ApplicationController
 
 	def show_all_season
-		player_data = Player.all
+		player_data = Player.all.pluck(:full_name, :team, :position).uniq
 		render json: player_data
 	end
 
@@ -67,7 +67,7 @@ class PlayersController < ApplicationController
         racr: (player_data.sum(:rec_yards).to_f)/(player_data.sum(:air_yards)),
         ms_air_yards: (player_data.sum(:air_yards).to_f)/(player_data.sum(:tm_airyards)),
         target_share: (player_data.sum(:tar).to_f)/(player_data.sum(:tm_att)),
-        wopr: player_data.average(:wopr),
+        wopr: player_data.average(:wopr).to_f,
 				player_data: player_data
 			}
 	end 

@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   
   # route to show entire database dataset
-  get '/allplayersdata' => 'players#show_all_season', :as => :all_players_data_weekly
+  get '/allplayerslist' => 'players#show_all_season', :as => :all_players_data_weekly
   # route to show list of all players
   get '/playerlist' => 'players#player_list', :as => :all_players_list
   # route to display all results for player name from entire dataset
